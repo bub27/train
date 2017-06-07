@@ -43,6 +43,14 @@ public class Train
 		return ((int)(poids*100))/100;
 	}
 
+    public int calculerNbRoues() {
+	    int nbRoues = 0;
+	    for (Vehicule v: lkVehicule) {
+		nbRoues += v.getNbRoues();
+	    }
+	    return nbRoues;
+	}
+
 	public boolean ajouterVehicule(Vehicule v)
 	{
 		if ( lkVehicule.size() == 0 && ! (v instanceof Motrice) ||
@@ -58,7 +66,8 @@ public class Train
 	{
 		String s="Train " + immatriculation 
 		    + " poids total en charge Maxi " + calculerPoidsEnChargeMaxi() + " t," 
-		    + " poids total à vide " + calculerPoidsTotalAVide() + " t\n";
+		    + " poids total à vide " + calculerPoidsTotalAVide() + " t, ";
+		    + " avec " + calculerNbRoues() + " roues\n";
 
 		for ( Vehicule v : lkVehicule )  s+= "   " + v + "\n";
 

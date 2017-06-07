@@ -14,9 +14,13 @@ public abstract class Vehicule
 
 	public abstract double getPoidsEnChargeMaxi();
 
-        public double getPoidsAVide() {
+    public double getPoidsAVide() {
 	  return poidsAVide;
-        }
+    }
+
+    public int getNbRoues() {
+	  return nbRoues;
+    }
 
 	public double getPoidsEnChargeMaxiParRoue()
 	{
