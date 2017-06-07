@@ -6,6 +6,10 @@ public abstract class Vehicule
 	protected int      nbRoues;
 
 
+        /*
+	  poidsAVide : poids à vide d'un véhicule
+	  nbRoues : nombre de roues d'un véhicule
+        */
 	public Vehicule ( double poidsAVide, int nbRoues)
 	{
 		this.poidsAVide = poidsAVide;
