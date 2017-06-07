@@ -66,7 +66,7 @@ public class Train
 	{
 		String s="Train " + immatriculation 
 		    + " poids total en charge Maxi " + calculerPoidsEnChargeMaxi() + " t," 
-		    + " poids total à vide " + calculerPoidsTotalAVide() + " t, ";
+		    + " poids total à vide " + calculerPoidsTotalAVide() + " t, "
 		    + " avec " + calculerNbRoues() + " roues\n";
 
 		for ( Vehicule v : lkVehicule )  s+= "   " + v + "\n";
