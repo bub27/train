@@ -4,6 +4,11 @@ public class Wagon extends Vehicule
 {
 	private double capaciteCharge;
 
+        /*
+	  poidsAVide : poids à vide du wagon
+	  nbRoues : nombre de roues du wagon
+	  capaciteCharge : poids maxi des marchandises transportables par le wagon
+        */
 	public Wagon (double poidsAVide, int nbRoues, double capaciteCharge)
 	{
 		super(poidsAVide,nbRoues);
