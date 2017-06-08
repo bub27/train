@@ -15,7 +15,14 @@ public class TestTrain
 		t1.ajouterVehicule ( new Motrice (  110, 12,   5) );
 		t1.ajouterVehicule ( new Voiture ( 40.3,  8,  65) );
 		t1.ajouterVehicule ( new Voiture ( 40.3,  8,  80) );
-		t1.ajouterVehicule ( new Wagon   ( 25.5,  8, 250) );
+		try {
+		    // ajout impossible
+		    t1.ajouterVehicule ( new Wagon   ( 25.5,  8, 250) );
+		    throw new Exception("On ne devrait pas arriver là");
+		}
+		catch(RuntimeException re) {
+		    System.err.println("ajout 0 impossible : normal");
+		}
 		try {
 		    // ajout impossible
 		    t1.ajouterVehicule ( new Motrice (  110, 12,   5) );
