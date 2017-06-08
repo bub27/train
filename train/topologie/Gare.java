@@ -1,13 +1,9 @@
 package train.topologie;
 
 public class Gare {
-    public enum TYPE_GARE {
-	MARCHANDISE,
-	VOYAGEUR};
-
     private String ville;
-    private TYPE_GARE type;
-    public Gare(String nom, TYPE_GARE monType) {
+    private TypeGare type;
+    public Gare(String nom, TypeGare monType) {
 	ville = nom;
 	type = monType;
     }
@@ -17,7 +13,7 @@ public class Gare {
 	return "Gare " + ville + "["+type+"]";
     }
 
-    public TYPE_GARE getType() {
+    public TypeGare getType() {
 	return type;
     }
 }
