@@ -27,4 +27,9 @@ public class Affectation {
 	boolean voyageurCorrect = typeItineraire == TypeGare.VOYAGEUR && typeTrain == Voiture.class;
 	return marchandiseCorrect || voyageurCorrect;
     }
+
+    @Override
+    public String toString() {
+	return train + " affecté à l'itinéraire " + itineraire;
+    }
 }
