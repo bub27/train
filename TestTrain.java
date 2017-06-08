@@ -4,6 +4,9 @@ import train.vehicule.Vehicule;
 import train.vehicule.Motrice;
 import train.vehicule.Voiture;
 import train.vehicule.Wagon;
+import train.topologie.TypeGare;
+import train.topologie.Gare;
+import train.topologie.Itineraire;
 
 public class TestTrain
 {
@@ -55,5 +58,19 @@ public class TestTrain
 
 		System.out.println ( t2 );
 
+		Gare g1 = new Gare("Le Havre", TypeGare.VOYAGEUR);
+		Gare g2 = new Gare("Rouen", TypeGare.VOYAGEUR);
+		Gare g3 = new Gare("Depot du Havre", TypeGare.MARCHANDISE);
+		
+		Itineraire i1 = new Itineraire(g1, g2);
+		System.out.println(i1);
+
+		try {
+		    Itineraire i2 = new Itineraire(g1, g3);
+		    throw new Exception("Problème à la création d'un itinéraire");
+		}
+		catch(RuntimeException re) {
+		    System.err.println("Itineraire logiquement illégal");
+		}
 	}
 }

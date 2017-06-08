@@ -21,6 +21,6 @@ public class Itineraire {
     @Override
     public String toString() {
 	return "Trajet [" + gareDepart.getType() + "] entre "
-	    + gareDepart.getNom() + " et " + gareDepart.getNom();
+	    + gareDepart.getNom() + " et " + gareArrivee.getNom();
     }
 }
