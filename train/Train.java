@@ -51,14 +51,17 @@ public class Train
 	    return nbRoues;
 	}
 
-	public boolean ajouterVehicule(Vehicule v)
+	public void ajouterVehicule(Vehicule v) throws RuntimeException
 	{
-		if ( lkVehicule.size() == 0 && ! (v instanceof Motrice) ||
-		     lkVehicule.size() >  0 &&   (v instanceof Motrice)    )   return false;
+	    if (lkVehicule.size() == 0 && ! (v instanceof Motrice)) {
+		throw new RuntimeException("Le premier véhicule doit etre une motrice");
+	    }
+	    if (lkVehicule.size() >  0 &&   (v instanceof Motrice)) {
+		throw new RuntimeException("Une seule motrice par train !");
+	    }
 
-		lkVehicule.add(v);
+	    lkVehicule.add(v);
 
-		return true;
 	}
 
 
