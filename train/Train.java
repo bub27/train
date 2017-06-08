@@ -82,6 +82,9 @@ public class Train
 	return (type == typeTrain);
     }
 
+    public Class getType() {
+	return typeTrain;
+    }
 
 	public String toString()
 	{

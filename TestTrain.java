@@ -4,6 +4,10 @@ import train.vehicule.Vehicule;
 import train.vehicule.Motrice;
 import train.vehicule.Voiture;
 import train.vehicule.Wagon;
+import train.topologie.TypeGare;
+import train.topologie.Gare;
+import train.topologie.Itineraire;
+import train.circulation.Affectation;
 
 public class TestTrain
 {
@@ -55,5 +59,31 @@ public class TestTrain
 
 		System.out.println ( t2 );
 
+		Gare g1 = new Gare("Le Havre", TypeGare.VOYAGEUR);
+		Gare g2 = new Gare("Rouen", TypeGare.VOYAGEUR);
+		Gare g3 = new Gare("Depot du Havre", TypeGare.MARCHANDISE);
+		Gare g4 = new Gare("Oudalle", TypeGare.MARCHANDISE);
+		
+		Itineraire i1 = new Itineraire(g1, g2);
+		System.out.println(i1);
+		Itineraire i2 = new Itineraire(g3, g4);
+		System.out.println(i2);
+
+		try {
+		    Itineraire i3 = new Itineraire(g1, g3);
+		    throw new Exception("Problème à la création d'un itinéraire");
+		}
+		catch(RuntimeException re) {
+		    System.err.println("Itineraire logiquement illégal");
+		}
+		Affectation a1 = new Affectation(i1, t1);
+		System.out.println(a1);
+		try {
+		    Affectation a2 = new Affectation(i2, t1);
+		    throw new Exception("Problème lors de l'affectation");
+		}
+		catch(RuntimeException re) {
+		    System.err.println("affectation logiquement illégal");
+		}
 	}
 }
