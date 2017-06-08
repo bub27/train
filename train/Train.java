@@ -9,6 +9,7 @@ public class Train
 {
 	private static String prochaineImmatriculation = "AAA";
 	private String immatriculation;
+        private Class typeTrain = null;
 
 	private LinkedList<Vehicule> lkVehicule;
 
@@ -60,9 +61,26 @@ public class Train
 		throw new RuntimeException("Une seule motrice par train !");
 	    }
 
-	    lkVehicule.add(v);
+	    if (estCorrect(v)) {
+		lkVehicule.add(v);
+	    }
+	    else {
+		throw new RuntimeException("train pas homogène");
+	    }
 
 	}
+
+    public boolean estCorrect(Vehicule v) {
+	Class type = v.getClass();
+	if (type == Motrice.class) {
+	    return true;
+	}
+	if (typeTrain == null) {
+	    typeTrain = type;
+	    return true;
+	}
+	return (type == typeTrain);
+    }
 
 
 	public String toString()
