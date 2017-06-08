@@ -13,4 +13,10 @@ public class Itineraire {
 	gareDepart = gare1;
 	gareArrivee = gare2;
     }
+
+    @Override
+    public String toString() {
+	return "Trajet [" + gareDepart.getType() + "] entre "
+	    + gareDepart.getNom() + " et " + gareDepart.getNom();
+    }
 }

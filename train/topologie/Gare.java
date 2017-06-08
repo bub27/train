@@ -16,4 +16,8 @@ public class Gare {
     public TypeGare getType() {
 	return type;
     }
+
+    public String getNom() {
+	return ville;
+    }
 }
